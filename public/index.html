@@ -21,10 +21,14 @@
         console.log('Perdimos conexion con el Servidor');
         });
 
-        socket.emit('mensaje', {nombre: 'Brian'});
+        // socket.emit('mensaje', {nombre: 'Brian'});
 
-        socket.on('mensaje', function(payload){
-        console.log('¿Que es esto?:', payload);
+        socket.on('nuevo-mensaje', function(payload){
+        console.log('Escuchando desde la aplicacion:', payload);
+        });
+
+        socket.on('active-bands', function(bands){
+        console.table('Bandas:', bands);
         });
             
     </script>
